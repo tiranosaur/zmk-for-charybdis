@@ -2,6 +2,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
     combos {
@@ -31,6 +32,21 @@
             bindings = <&kp LC(C)>;
             key-positions = <31 32>;
         };
+
+        layer_3 {
+            bindings = <&mo 1>;
+            key-positions = <48 49 50>;
+        };
+
+        enter_1 {
+            bindings = <&kp ENTER>;
+            key-positions = <26 27 28>;
+        };
+
+        enter_2 {
+            bindings = <&none>;
+            key-positions = <31 32 33>;
+        };
     };
 
     behaviors {
@@ -55,30 +71,8 @@
 &kp ESC       &kp Q                &kp W                &kp E             &kp R                  &kp T        &kp Y                       &kp U                        &kp I             &kp O                 &kp P                    &kp LBKT
 &kp TAB       &homerow LEFT_GUI A  &homerow LEFT_ALT S  &homerow LCTRL D  &homerow LEFT_SHIFT F  &kp G        &kp H                       &homerow RIGHT_SHIFT J       &homerow LCTRL K  &homerow RIGHT_ALT L  &homerow RIGHT_GUI SEMI  &kp SQT
 &kp LEFT_WIN  &kp Z                &kp X                &kp C             &kp V                  &kp B        &kp N                       &kp M                        &kp COMMA         &kp DOT               &kp FSLH                 &kp RIGHT_BRACKET
-                                                        &mo 1             &lt 2 SPACE            &mkp LCLK    &kp RET                     &homerow LC(BSPC) BACKSPACE
+                                                        &mo 2             &lt 3 SPACE            &mkp LCLK    &kp RET                     &homerow LC(BSPC) BACKSPACE
                                                                           &kp LEFT_ALT           &mkp RCLK    &homerow RC(DELETE) DELETE
-            >;
-        };
-
-        NAV {
-            bindings = <
-&sys_reset  &trans             &trans    &trans    &trans     &trans             &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR_ALL  &sys_reset
-&trans      &kp PAGE_UP        &kp HOME  &kp UP    &kp END    &kp PAGE_DOWN      &kp PG_UP      &kp HOME      &kp UP_ARROW  &kp END       &trans          &trans
-&trans      &kp C_VOLUME_DOWN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp C_VOLUME_UP    &kp PAGE_DOWN  &kp LEFT      &kp DOWN      &kp RIGHT     &trans          &trans
-&trans      &trans             &trans    &trans    &trans     &trans             &trans         &trans        &trans        &trans        &trans          &trans
-                                         &trans    &trans     &trans             &trans         &trans
-                                                   &trans     &trans             &trans
-            >;
-        };
-
-        SYMNUM {
-            bindings = <
-&kp F1            &kp F2      &kp F3     &kp F4        &kp F5          &kp F6            &kp F7           &kp F8                &kp F9                 &kp F10       &kp F11        &kp F12
-&kp PRINTSCREEN   &kp N6      &kp N7     &kp N8        &kp N9          &kp N0            &kp EXCLAMATION  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp ASTERISK  &kp AMPERSAND  &kp AT
-&kp LS(LEFT_ALT)  &kp N1      &kp N2     &kp N3        &kp N4          &kp N5            &kp EQUAL        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PLUS      &kp PERCENT    &kp HASH
-&kp LC(LEFT_WIN)  &kp DOLLAR  &kp CARET  &kp CAPSLOCK  &kp SCROLLLOCK  &kp KP_NUMLOCK    &kp UNDERSCORE   &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp MINUS     &kp SLASH      &kp PIPE
-                                         &trans        &mo 2           &trans            &kp ENTER        &kp BSPC
-                                                       &kp LEFT_SHIFT  &trans            &kp DEL
             >;
         };
 
@@ -90,6 +84,28 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans        &trans        &trans        &trans        &trans          &trans
                         &trans  &trans  &trans    &trans        &trans
                                 &trans  &trans    &trans
+            >;
+        };
+
+        NAV {
+            bindings = <
+&sys_reset  &trans  &trans   &trans   &trans   &trans    &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR_ALL  &sys_reset
+&trans      &kp F9  &kp F10  &kp F11  &kp F12  &trans    &kp PG_UP      &kp HOME      &kp UP_ARROW  &kp END       &trans          &trans
+&trans      &kp F5  &kp F6   &kp F7   &kp F8   &trans    &kp PAGE_DOWN  &kp LEFT      &kp DOWN      &kp RIGHT     &trans          &trans
+&trans      &kp F1  &kp F2   &kp F3   &kp F4   &kp F5    &trans         &trans        &trans        &trans        &trans          &trans
+                             &trans   &trans   &trans    &trans         &trans
+                                      &trans   &trans    &trans
+            >;
+        };
+
+        SYMNUM {
+            bindings = <
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5          &kp F6    &kp F7           &kp F8                &kp F9                 &kp F10       &kp F11        &kp F12
+&trans  &trans  &kp N7  &kp N8  &kp N9          &kp N0    &kp EXCLAMATION  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp ASTERISK  &kp AMPERSAND  &kp AT
+&trans  &trans  &kp N4  &kp N5  &kp N6          &kp N0    &kp EQUAL        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PLUS      &kp PERCENT    &kp HASH
+&trans  &trans  &kp N1  &kp N2  &kp N3          &kp N0    &kp UNDERSCORE   &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp MINUS     &kp SLASH      &kp PIPE
+                        &trans  &mo 3           &trans    &kp ENTER        &kp BSPC
+                                &kp LEFT_SHIFT  &trans    &kp DEL
             >;
         };
     };
