@@ -2,6 +2,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
     combos {
@@ -17,34 +18,29 @@
             key-positions = <50 54>;
         };
 
-        Copy {
-            bindings = <&kp LC(C)>;
-            key-positions = <25 26>;
-        };
-
-        paste {
-            bindings = <&kp LC(V)>;
-            key-positions = <27 28>;
-        };
-
-        copy2 {
-            bindings = <&kp LC(C)>;
-            key-positions = <31 32>;
-        };
-
         layer_service {
             bindings = <&mo 1>;
             key-positions = <48 49 50>;
         };
 
-        enter_1 {
+        R_enter {
             bindings = <&kp ENTER>;
             key-positions = <26 27 28>;
         };
 
-        enter_2 {
-            bindings = <&none>;
+        L_enter {
+            bindings = <&kp ENTER>;
             key-positions = <31 32 33>;
+        };
+
+        R_left_click {
+            bindings = <&mkp LCLK>;
+            key-positions = <19 20>;
+        };
+
+        R_right_click {
+            bindings = <&mkp RCLK>;
+            key-positions = <20 21>;
         };
     };
 
@@ -99,12 +95,12 @@
 
         SYMNUM {
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5          &kp F6    &kp F7           &kp F8                &kp F9                 &kp F10       &kp F11        &kp F12
-&trans  &trans  &kp N7  &kp N8  &kp N9          &kp N0    &kp EXCLAMATION  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp ASTERISK  &kp AMPERSAND  &kp AT
-&trans  &trans  &kp N4  &kp N5  &kp N6          &kp N0    &kp EQUAL        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PLUS      &kp PERCENT    &kp HASH
-&trans  &trans  &kp N1  &kp N2  &kp N3          &kp N0    &kp UNDERSCORE   &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp MINUS     &kp SLASH      &kp PIPE
-                        &trans  &mo 3           &trans    &kp ENTER        &kp BSPC
-                                &kp LEFT_SHIFT  &trans    &kp DEL
+&kp F1  &kp F2     &kp F3  &kp F4  &kp F5          &kp F6    &kp F7           &kp F8                &kp F9                 &kp F10       &kp F11        &kp F12
+&trans  &trans     &kp N7  &kp N8  &kp N9          &kp N0    &kp EXCLAMATION  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp ASTERISK  &kp AMPERSAND  &kp AT
+&trans  &kp GRAVE  &kp N4  &kp N5  &kp N6          &kp N0    &kp EQUAL        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PLUS      &kp PERCENT    &kp HASH
+&trans  &trans     &kp N1  &kp N2  &kp N3          &kp N0    &kp UNDERSCORE   &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp MINUS     &kp SLASH      &kp PIPE
+                           &trans  &mo 3           &trans    &kp ENTER        &kp BSPC
+                                   &kp LEFT_SHIFT  &trans    &kp DEL
             >;
         };
     };
