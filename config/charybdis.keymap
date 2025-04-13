@@ -2,6 +2,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
     combos {
@@ -104,7 +105,7 @@
 &kp F1  &kp F2                      &kp F3                      &kp F4                   &kp F5                        &kp F6          &kp F7        &kp F8                   &kp F9             &kp F10                      &kp F11                &kp F12
 &none   &none                       &none                       &none                    &none                         &none           &none         &none                    &none              &kp LEFT_BRACKET             &kp RIGHT_BRACKET      &none
 &none   &homerow LEFT_GUI NUMBER_1  &homerow LEFT_ALT NUMBER_2  &homerow LCTRL NUMBER_3  &homerow LEFT_SHIFT NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &homerow RIGHT_SHIFT N7  &homerow RCTRL N8  &homerow RIGHT_ALT NUMBER_9  &homerow RIGHT_GUI N0  &none
-&none   &kp GRAVE                   &none                       &none                    &kp SQT                       &none           &none         &kp SQT                  &none              &none                        &kp BACKSLASH          &none
+&none   &kp GRAVE                   &none                       &none                    &none                         &none           &kp MINUS     &kp SQT                  &none              &none                        &kp BACKSLASH          &none
                                                                 &trans                   &mo 3                         &trans          &kp ENTER     &kp BSPC
                                                                                          &kp LEFT_SHIFT                &trans          &kp DEL
             >;
